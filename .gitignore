@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+cache/
+runs/
+*.safetensors
+data/*.jsonl
+!data/toy_*.jsonl
