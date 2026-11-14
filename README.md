@@ -75,14 +75,17 @@ What this says:
 ## Layout
 
 ```
-probelab/schema.py   JSONL example schema (text|messages, labels{concept:0/1}, split, source, tags)
-probelab/extract.py  HF forward w/ output_hidden_states -> cache/<model>/<dataset>/L<l>_<pool>.npy + manifest
-probelab/probes.py   MassMean (LDA-lite), Logistic, MLP ; save/load ; ProbeSpec
-probelab/evals.py    threshold@FPR, recall/precision/realized-FPR, bootstrap CI, tag slices
-probelab/select.py   uncertain / top-positive / disagree / diverse (k-means) selection
-probelab/cli.py      extract | sweep | train | score | select
-scripts/             make_toy.py, build_harmful.py
-results/             sweep outputs quoted in this README
+probelab/       the package
+  schema.py     JSONL example schema (text|messages, labels{concept:0/1}, split, source, tags)
+  extract.py    HF forward w/ output_hidden_states -> cache/<model>/<dataset>/L<l>_<pool>.npy + manifest
+  probes.py     MassMean (LDA-lite), Logistic, MLP ; save/load ; ProbeSpec
+  evals.py      threshold@FPR, recall/precision/realized-FPR, bootstrap CI, tag slices
+  select.py     uncertain / top-positive / disagree / diverse (k-means) selection
+  cli.py        extract | sweep | train | score | select
+scripts/        make_toy.py (toy set with shift slices), build_harmful.py (the real dataset)
+data/           the toy set; built datasets land here, git-ignored
+results/        sweep outputs quoted in this README
+tests/          pipeline tests on synthetic activations
 ```
 
 ## Roadmap
